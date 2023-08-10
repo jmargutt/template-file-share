@@ -41,7 +41,7 @@ def download_file(share, file_path, share_path, sas_token):
 
 def list_files(share, directory, sas_token):
     parent_dir = ShareDirectoryClient(
-        account_url="https://jordehstaging9ac7.file.core.windows.net",
+        account_url=f"https://{os.getenv('ACCOUNT_NAME')}.file.core.windows.net",
         credential=sas_token,
         share_name=share,
         directory_path=directory)
